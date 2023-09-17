@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class EggController : MonoBehaviour
 {
-    [SerializeField] private Sprite _commonColor;
-    [SerializeField] private Sprite _rareColor;
-    [SerializeField] private Sprite _epicColor;
-    [SerializeField] private Sprite _mythicColor;
-    [SerializeField] private Sprite _exoticColor;
-    [SerializeField] private Sprite _legendaryColor;
     [SerializeField] private SpriteRenderer _eggSpriteRenderer;
 
     private List<Duck> _parents = new List<Duck>();
@@ -23,7 +17,6 @@ public class EggController : MonoBehaviour
         _eggSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void SetHatchingTime(float time) { _hatchingTime = time; }
     public void StartIncubation(Vector3 position, Action<NestState> nestCallback)
     {
         _nestCallback = nestCallback;
@@ -94,34 +87,6 @@ public class EggController : MonoBehaviour
 
     private void SetColorAndTime()
     {
-        switch (_eggRarity)
-        {
-            case PartRarity.COMMON:
-                _eggSpriteRenderer.sprite = _commonColor;
-                _hatchingTime = 15f;
-                break;
-            case PartRarity.RARE:
-                _eggSpriteRenderer.sprite = _rareColor;
-                _hatchingTime = 30f;
-                break;
-            case PartRarity.EPIC:
-                _eggSpriteRenderer.sprite = _epicColor;
-                _hatchingTime = 45f;
-                break;
-            case PartRarity.MYTHIC:
-                _eggSpriteRenderer.sprite = _mythicColor;
-                _hatchingTime = 60f;
-                break;
-            case PartRarity.EXOTIC:
-                _eggSpriteRenderer.sprite = _exoticColor;
-                _hatchingTime = 80f;
-                break;
-            case PartRarity.LEGENDARY:
-                _eggSpriteRenderer.sprite = _legendaryColor;
-                _hatchingTime = 90f;
-                break;
-            default:
-                break;
-        }
+        (_eggSpriteRenderer.sprite, _hatchingTime) = GameManager.Instance.GetEggInfo(_eggRarity);
     }
 }

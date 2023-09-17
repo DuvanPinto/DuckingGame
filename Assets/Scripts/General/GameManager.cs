@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private List<DuckController> _activeDucks = new List<DuckController>();
     private List<DuckController> _inactiveDucks = new List<DuckController>();
     private int _duckIndex = 0;
+    private EggsDictionary _eggsDictionary;
 
     public static GameManager _instance = null;
 
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour
         _nests = FindObjectsOfType<NestController>().ToList();
         _activeDucks = FindObjectsOfType<DuckController>().ToList();
         _inactiveDucks = FindObjectsOfType<DuckController>(true).ToList();
+
+        _eggsDictionary = (EggsDictionary)Resources.Load<EggsDictionary>("EggsDictionary");
+
         for (int i = _inactiveDucks.Count - 1; i >= 0; i--)
         {
             if (_inactiveDucks[i].gameObject.activeSelf)
@@ -93,6 +97,12 @@ public class GameManager : MonoBehaviour
         }
         return newDuck;
     }
+
+    public (Sprite, float) GetEggInfo(PartRarity rarity)
+    {
+        return (_eggsDictionary.GetSprite(rarity), _eggsDictionary.GetHatchTime(rarity));
+    }
+
     public List<NestController> Nests => _nests;
     public List<DuckController> ActiveDucks => _activeDucks;
 

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea1f1172eb57344f99908e6feffb013, type: 3}
+  m_Name: EggsDictionary
+  m_EditorClassIdentifier: 
+  _eggs:
+  - eggRarity: 0
+    eggSprite: {fileID: 21300000, guid: 47db49d877318414aa7666493af11040, type: 3}
+    hatchTime: 15
+  - eggRarity: 1
+    eggSprite: {fileID: 21300000, guid: 2b51649b656b7d44391dde2004aa6142, type: 3}
+    hatchTime: 30
+  - eggRarity: 2
+    eggSprite: {fileID: 21300000, guid: c99786d18d373cb47a9bf9c9e91c434a, type: 3}
+    hatchTime: 45
+  - eggRarity: 3
+    eggSprite: {fileID: 21300000, guid: 24c5a06fa38e53a4b93727d9e21435e0, type: 3}
+    hatchTime: 60
+  - eggRarity: 4
+    eggSprite: {fileID: 21300000, guid: 14319c0c94f7ace419eabc86691db947, type: 3}
+    hatchTime: 80
+  - eggRarity: 5
+    eggSprite: {fileID: 21300000, guid: 08160c1a9b73063489ecb2c7c246655d, type: 3}
+    hatchTime: 90
+  - eggRarity: 6
+    eggSprite: {fileID: 21300000, guid: 1f3f6b89654003e4ea979bdc2ad474eb, type: 3}
+    hatchTime: 0

@@ -10,7 +10,8 @@ public enum PartRarity
     EPIC,
     MYTHIC,
     EXOTIC,
-    LEGENDARY
+    LEGENDARY,
+    MUTANT
 }
 
 [System.Serializable]
